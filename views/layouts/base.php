@@ -24,7 +24,7 @@ $this->params['body-class'] = array_key_exists('body-class', $this->params) ?
     <?php $this->head() ?>
 
 </head>
-<?php echo Html::beginTag('body')?>
+<?php echo Html::beginTag('body', ['class' => 'skin-blue'])?>
     <?php $this->beginBody() ?>
         <?php echo $content ?>
     <?php $this->endBody() ?>

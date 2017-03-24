@@ -24,7 +24,7 @@ class AdminLte extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\jui\JuiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        'common\assets\FontAwesome',
-        'common\assets\JquerySlimScroll'
+        'app\assets\FontAwesome',
+        'app\assets\JquerySlimScroll'
     ];
 }

@@ -64,7 +64,13 @@ $config = [
                         'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css',
                     ]
                 ],
-                'common\assets\Html5shiv' => [
+                'app\assets\JquerySlimScroll' => [
+                    'sourcePath' => null,
+                    'js' => [
+                        'https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js',
+                    ]
+                ],
+                'app\assets\Html5shiv' => [
                     'sourcePath' => null,
                     'css' => [
                         'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js',

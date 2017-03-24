@@ -14,7 +14,7 @@ $bundle = \app\assets\AppAsset::register($this);
     <div class="wrapper">
         <!-- header logo: style can be found in header.less -->
         <header class="main-header">
-            <a href="" class="logo">
+            <a href="<?=Url::to(['/'])?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                Admin
             </a>
@@ -22,7 +22,7 @@ $bundle = \app\assets\AppAsset::register($this);
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only"><?php echo Yii::t('backend', 'Toggle navigation') ?></span>
+                    <span class="sr-only"><?php echo Yii::t('app', 'Toggle navigation') ?></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -46,22 +46,22 @@ $bundle = \app\assets\AppAsset::register($this);
                             </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header"><?php echo Yii::t('backend', 'You have {num} log items', ['num'=> 10]) ?></li>
+                                <li class="header"><?php echo Yii::t('app', 'You have {num} log items', ['num'=> 10]) ?></li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
                                         <?php for ($i = 0; $i<=10; $i++){?>
                                             <li>
-                                                <a href="<?php echo Yii::$app->urlManager->createUrl(['/log/view', 'id'=>$logEntry->id]) ?>">
-                                                    <i class="fa fa-warning <?php echo $logEntry->level == \yii\log\Logger::LEVEL_ERROR ? 'text-red' : 'text-yellow' ?>"></i>
-                                                    <?php echo $logEntry->category ?>
+                                                <a href="">
+                                                    <i class="fa fa-warning  text-red"></i>
+                                                   1
                                                 </a>
                                             </li>
                                         <?php }?>
                                     </ul>
                                 </li>
                                 <li class="footer">
-                                    <?php echo Html::a(Yii::t('backend', 'View all'), ['/log/index']) ?>
+                                    <?php echo Html::a(Yii::t('app', 'View all'), ['/log/index']) ?>
                                 </li>
                             </ul>
                         </li>
@@ -78,7 +78,7 @@ $bundle = \app\assets\AppAsset::register($this);
                                     <p>
                                         Admin
                                         <small>
-                                            <?php echo Yii::t('app', 'Member since {0, date, short}', Yii::$app->user->identity->created_at) ?>
+                                            <?php echo Yii::t('app', 'Member since {0, date, short}', '2017') ?>
                                         </small>
                                 </li>
                                 <!-- Menu Footer-->
@@ -109,10 +109,10 @@ $bundle = \app\assets\AppAsset::register($this);
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="<?php $this->assetManager->getAssetUrl($bundle, 'img/anonymous.png') ?>" class="img-circle" />
+                        <img src="<?php echo $this->assetManager->getAssetUrl($bundle, 'img/anonymous.png') ?>" class="img-circle" />
                     </div>
                     <div class="pull-left info">
-                        <p><?php echo Yii::t('backend', 'Hello, {username}', ['username'=>'Admin']) ?></p>
+                        <p><?php echo Yii::t('app', 'Hello, {username}', ['username'=>'Admin']) ?></p>
                         <a href="<?php echo Url::to(['/sign-in/profile']) ?>">
                             <i class="fa fa-circle text-success"></i>
                             <?php echo Yii::$app->formatter->asDatetime(time()) ?>
@@ -127,7 +127,7 @@ $bundle = \app\assets\AppAsset::register($this);
                     'activateParents'=>true,
                     'items'=>[
                         [
-                            'label'=>Yii::t('backend', 'Main'),
+                            'label'=>Yii::t('app', 'Main'),
                             'options' => ['class' => 'header']
                         ],
                         [
@@ -137,6 +137,36 @@ $bundle = \app\assets\AppAsset::register($this);
                             'options'=>['class'=>'treeview'],
                             'items'=>[
                                 ['label'=> 'm01', 'url'=>['/m0/m01'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm02', 'url'=>['/m0/m02'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm03', 'url'=>['/m0/m03'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm04', 'url'=>['/m0/m04'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm05', 'url'=>['/m0/m05'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                            ]
+                        ],
+                        [
+                            'label'=>'M1',
+                            'url' => '#',
+                            'icon'=>'<i class="fa fa-edit"></i>',
+                            'options'=>['class'=>'treeview'],
+                            'items'=>[
+                                ['label'=> 'm11', 'url'=>['/m1/m11'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm12', 'url'=>['/m1/m12'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm13', 'url'=>['/m1/m13'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm14', 'url'=>['/m1/m14'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm15', 'url'=>['/m1/m15'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                            ]
+                        ],
+                        [
+                            'label'=>'M2',
+                            'url' => '#',
+                            'icon'=>'<i class="fa fa-edit"></i>',
+                            'options'=>['class'=>'treeview'],
+                            'items'=>[
+                                ['label'=> 'm11', 'url'=>['/m2/m21'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm12', 'url'=>['/m2/m22'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm13', 'url'=>['/m2/m23'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm14', 'url'=>['/m2/m24'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
+                                ['label'=> 'm15', 'url'=>['/m2/m25'], 'icon'=>'<i class="fa fa-angle-double-right"></i>'],
                             ]
                         ],
                     ]
